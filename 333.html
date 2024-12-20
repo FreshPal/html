@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Шаблон HTML-сторінки">
+    <title>HTML Шаблон</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#banner">Банер</a></li>
+                <li><a href="#about-us">Про нас</a></li>
+                <li><a href="#contact-form">Зворотній зв'язок</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Секція Банер -->
+    <section id="banner">
+        <h1>Ласкаво просимо!</h1>
+        <p>Це приклад HTML-сторінки для практики.</p>
+    </section>
+
+    <!-- Секція Про нас -->
+    <section id="about-us">
+        <h2>Про нас</h2>
+        <p>Цей сайт створений Панкратовим Владиславом для технологічної практики.</p>
+    </section>
+
+    <!-- Форма зворотного зв'язку -->
+    <section id="contact-form">
+        <h2>Зворотній зв'язок</h2>
+        <form action="#" method="post" novalidate>
+            <label for="name">Ім'я:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Пошта:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Номер телефону:</label>
+            <input type="tel" id="phone" name="phone" pattern="\+380\d{9}" required placeholder="+380123456789">
+
+            <label for="message">Повідомлення:</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+
+            <label>
+                <input type="checkbox" name="agree" required>
+                Погоджуюсь віддати всі свої особисті дані
+            </label>
+
+            <button type="submit">Відправити</button>
+        </form>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <p>© 2024 Панкратов Владислав. Всі права захищено.</p>
+        <ul>
+            <li><a onclick="openModal('privacy')">Політика конфіденційності</a></li>
+            <li><a onclick="openModal('terms')">Умови використання</a></li>
+        </ul>
+        <p>Слідкуйте за нами: 
+            <a target="_blank" href="https://www.facebook.com/profile.php?id=100017394279843">Facebook</a> | 
+            <a target="_blank" href="https://www.instagram.com/pankratov911/">Instagram</a> | 
+            <a target="_blank" href="https://x.com/?lang=uk">Twitter</a>
+        </p>
+    </footer>
+
+    <!-- Модальне вікно -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(type) {
+            const modal = document.getElementById('modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalText = document.getElementById('modal-text');
+
+            if (type === 'privacy') {
+                modalTitle.textContent = 'Політика конфіденційності';
+                modalText.textContent = 'Ми заберемо всі ваші дані.';
+            } else if (type === 'terms') {
+                modalTitle.textContent = 'Умови використання';
+                modalText.textContent = 'Умов використання не має і не буде).';
+            }
+
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
