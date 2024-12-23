@@ -1,12 +1,9 @@
-/* Основні стилі */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
 }
-
-/* Шапка */
 header {
     background: #333;
     color: white;
@@ -26,21 +23,15 @@ header ul li a {
     color: white;
     text-decoration: none;
 }
-
-/* Банер */
 #banner {
     text-align: center;
     padding: 2rem;
     background: #f4f4f4;
 }
-
-/* Про нас */
 #about-us {
     padding: 2rem;
     background: #eaeaea;
 }
-
-/* Форма */
 form {
     max-width: 500px;
     margin: 0 auto;
@@ -65,8 +56,6 @@ form button {
 form button:hover {
     background: #555;
 }
-
-/* Футер */
 footer {
     text-align: center;
     padding: 1rem;
@@ -85,7 +74,6 @@ footer ul li a {
     color: white;
     text-decoration: none;
 }
-/* Модальне вікно */
 .modal {
     display: none;
     position: fixed;
@@ -98,7 +86,6 @@ footer ul li a {
     align-items: center;
     z-index: 1000;
 }
-
 .modal-content {
     background-color: #fff;
     padding: 20px;
@@ -107,11 +94,9 @@ footer ul li a {
     max-width: 500px;
     text-align: center;
 }
-
 .modal-content h2 {
     margin-top: 0;
 }
-
 .close {
     position: absolute;
     top: 10px;
